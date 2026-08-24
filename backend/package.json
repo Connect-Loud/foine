@@ -1,0 +1,17 @@
+{
+  "name": "foine-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "password-hash": "^1.2.2",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,9 +1,7 @@
 import axios from "axios";
 
 export const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://foinebackend.herokuapp.com/api"
-    : "http://localhost:5000/api";
+  process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 // export const BASE_URL = 'https://foine-backend.herokuapp.com/api';
 
