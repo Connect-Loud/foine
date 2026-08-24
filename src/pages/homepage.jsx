@@ -18,10 +18,6 @@ import QuickPay from "../components/quick-pay";
 import { useWatchlist } from "../providers/watchlistProvider";
 import { useAuth } from "../providers/authProvider";
 import { useProducts } from "../providers/productProvider";
-import io from "socket.io-client";
-
-let socket;
-
 const HomePage = () => {
   const [searchString, setSearchString] = useState("");
   const { user } = useAuth();
@@ -48,13 +44,6 @@ const HomePage = () => {
     }
   }, [quickCheckout]);
 
-  useEffect(() => {
-    socket = io(process.env.REACT_APP_SOCKET_URI);
-    socket.on("connect", () => {
-      console.log(`SOCKET ID ${socket.id}`);
-    });
-  }, []);
-
   history.listen(() => {
     document.body.style.overflow = "auto";
   });
@@ -65,7 +54,7 @@ const HomePage = () => {
         <HomeHeader onSearch={handleSearch} />
 
         <div className="page-body">
-          <LiveFeedSection sock={socket} />
+          <LiveFeedSection />
         </div>
         <QuickWatchlistView />
         <FloatNotifications />
