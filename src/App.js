@@ -26,9 +26,9 @@ function App() {
       ) : (
         <Router>
           <Switch>
-            {/* <Route path="/addProduct">
-            <AddProdPage />
-          </Route> */}
+            <Route path="/addProduct">
+              <AddProdPage />
+            </Route>
             <Route path="/">
               <HomePage />
             </Route>

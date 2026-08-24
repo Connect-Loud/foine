@@ -143,7 +143,12 @@ const LiveFeedSection = ({ sock }) => {
           <MdcHumanFemale size={25} />
         </span>
       </div>
-      {products.length > 0 ? (
+      {loading ? (
+        <div className="load">
+          <p>Loading Products</p>
+          <Loader />
+        </div>
+      ) : products.length > 0 ? (
         <div className={`inner ${showFilters ? "shift" : ""}`}>
           <div ref={scrollTopRef}></div>
           {allActive &&
@@ -186,8 +191,7 @@ const LiveFeedSection = ({ sock }) => {
         </div>
       ) : (
         <div className="load">
-          <p>Loading Products</p>
-          <Loader />
+          <p>No products yet</p>
         </div>
       )}
       {/* <FilterBox show={showFilters} /> */}
